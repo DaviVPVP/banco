@@ -3,19 +3,25 @@
     require_once('Pessoa.php');
     require_once('Funcionario.php');
     require_once('Cliente.php');
+    require_once('Endereco.php');
 
-    $pessoa1 = new Pessoa("12356862123","Allan","11999999999","Rua Jeri");
-    $pessoa2 = new Pessoa("12356862124","João","11999999998","Rua Bla");
+    $enderecoCliente1 = new Endereco('Rua Jiparana',
+                                      123, 
+                                      'Berini',
+                                      'São Paulo', 'São Paulo', 'SP', 'Brasil','777333');
+    $cliente1 = new Cliente('12345678','Davi','11999999999',$enderecoCliente1, '17/04/1989',
+    1000);
 
-    $funcionario1= new Funcionario(123, "Davi", 1000, "Gerente", "Senador Vergueiro", "1165656565");
-
-    $cliente1= new Cliente("12345678", "Fabio", "10009999", "Maua", 20/07/2000, 100);
-
-
-    echo $pessoa1->imprimir();
-    echo $pessoa2->imprimir();
-    echo $funcionario1->imprimir();
     echo $cliente1->imprimir();
+    echo $enderecoCliente1->imprimir();
+
+    echo "<br><br>";
+
+    $enderecoFunc1 = new Endereco("Rua Jeri", 123, "manaus","Rio de Janeiro", "Rio de Janeiro", "RJ", "Brasil", "01312312");
+    $funcionario1 = new Funcionario("12345687", 123, "Astolfo", 1256, "Gerente", $enderecoFunc1, "119821213");
+
+    echo $enderecoFunc1->imprimir();
+    echo $funcionario1->imprimir();
 
 
 ?>
